@@ -18,7 +18,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1efX4zhVUADi6Q03GIj8wXUbuoL" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -42,14 +44,26 @@
       <option name="presentableId" value="Default" />
       <updated>1594713434675</updated>
       <workItem from="1594713437817" duration="153000" />
+      <workItem from="1594713658623" duration="348000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
     <state x="560" y="315" key="Rider.ProjectTemplateDialog.Size" timestamp="1594713779458">
       <screen x="0" y="23" width="1920" height="1106" />
