@@ -9,7 +9,7 @@ namespace NetExercise.Test.Basic
         [TestCase(156, 12)]
         public void Test_TongSoNguyen_Ok(int a, int result)
         {
-            Assert.AreEqual(Exercise02.TongSoNguyen(a), result);
+            Assert.AreEqual(Exercise02.SumDigits(a), result);
         }
     }
 }
