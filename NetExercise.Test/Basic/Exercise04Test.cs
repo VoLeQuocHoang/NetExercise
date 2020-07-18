@@ -5,11 +5,14 @@ namespace NetExercise.Test.Basic
 {
     public class Exercise04Test
     {
-        [TestCase(35, "0 1 1 2 3 5 8 13 21 34")]
-        [TestCase(12, "0 1 1 2 3 5 8")]
-        public void Test_Fibonacci_Ok(int a, string result)
+        [TestCase(35, "1 1 2 3 5 8 13 21 34")]
+        [TestCase(12, "1 1 2 3 5 8")]
+        [TestCase(0, "")]
+        [TestCase(1, "1 1")]
+        [TestCase(2, "1 1 2")]
+        public void Test_Fibonacci_Ok(int n, string result)
         {
-            Assert.AreEqual(Exercise04.Fibonacci(a), result);
+            Assert.AreEqual(Exercise04.Fibonacci(n), result);
         }
     }
 }
