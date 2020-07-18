@@ -1,4 +1,4 @@
-using System.Text;
+using System.Collections.Generic;
 
 namespace NetExercise.Basic
 {
@@ -6,44 +6,38 @@ namespace NetExercise.Basic
     {
         public static string FindNumber()
         {
-            StringBuilder str = new StringBuilder(40);
-            
-            for (int i = 10; i <= 99999; i++)
-            {
-                int temp = 0,j = 0,expo = 0;
-                j = i;
-                expo = i.ToString().Length;
-                
-                while (j > 0)
-                {
-                    //temp += Convert.ToInt32(Math.Pow(j % 10, mu));
-                    temp += Exponent(j%10,expo);
-                    j /= 10;
-                }
+            var results = new List<int>();
 
-                if (temp == i)
+            for (var i = 10; i <= 99999; i++)
+            {
+                if (Convert(i) == i)
                 {
-                    if (str.Length == 0)
-                    {
-                        str.Append(i);
-                    }
-                    else
-                    {
-                        str.Append(" ");
-                        str.Append(i);
-                    }
+                    results.Add(i);
                 }
-                
             }
 
-            return str.ToString();
+            return string.Join(" ", results);
         }
 
-        public static int Exponent(int a, int n)
+        private static int Convert(int n)
         {
-            int exp = 1;
-            
-            for (int i = 1; i <= n; i++)
+            var length  = n.ToString().Length;
+
+            var temp = 0;
+            while (n > 0)
+            {
+                temp += Power(n % 10, length);
+                n /= 10;
+            }
+
+            return temp;
+        }
+        
+        private static int Power(int a, int n)
+        {
+            var exp = 1;
+
+            for (var i = 1; i <= n; i++)
             {
                 exp *= a;
             }
