@@ -4,21 +4,14 @@ namespace NetExercise.Basic
     {
         public static int Factorial(int n)
         {
-            int sum = 1;
+            int multi = 1;
 
-            if (n == 0)
+            for (int i = 1; i <= n; i++)
             {
-                return sum;
-            }
-            else if (n > 0)
-            {
-                for (int i = 1; i <= n; i++)
-                {
-                    sum *= i;
-                }
+                multi *= i;
             }
 
-            return sum;
+            return multi;
         }
     }
 }
