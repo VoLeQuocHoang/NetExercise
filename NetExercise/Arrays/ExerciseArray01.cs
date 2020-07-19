@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Reflection.Emit;
 
-namespace NetExercise.Basic
+namespace NetExercise.Arrays
 {
-    public class Exercise01Array
+    public class ExerciseArray01
     {
         public static string CountNumberShow(int[] a)
         {
