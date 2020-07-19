@@ -1,37 +1,26 @@
-using System.Text;
+using System.Collections.Generic;
 
 namespace NetExercise.Basic
 {
     public class Exercise04
     {
-        public static string Fibonacci(int a)
+        public static string Fibonacci(int n)
         {
-            if (a < 1)
-            {
-                return "";
-            }
+            var numbers = new List<int>();
+
+            var f1 = 0;
+            var f2 = 1;
             
-            int f0 = 0;
-            int f1 = 1;
-            int f2 = 1;
-            StringBuilder str = new StringBuilder(100);
-            str.Append("0 1 1");
-            
-            while (a > f2)
+            while (n >= f2)
             {
-                f0 = f1;
+                numbers.Add(f2);
+                
+                var temp = f1;
                 f1 = f2;
-                f2 = f0 + f1;
-                
-                if (f2 <= a)
-                {
-                    str.Append(" ");
-                    str.Append(f2);
-                }
-                
+                f2 = temp + f1;
             }
-            
-            return str.ToString();
+
+            return string.Join(" ", numbers);
         }
     }
 }
