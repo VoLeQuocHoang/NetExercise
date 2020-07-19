@@ -7,9 +7,10 @@ namespace NetExercise.Test.Basic
     {
         [TestCase(27, 3)]
         [TestCase(729, 9)]
-        public void Test_CubeRoot_Ok(float a, float result)
+        [TestCase(52.5, 3.7444)]
+        public void Test_CubeRoot_Ok(double a, double result)
         {
-            Assert.AreEqual(Exercise10.CubeRoot(a), result);
+            Assert.AreEqual(Exercise10.CubeRoot(a), result, 0.0001);
         }
     }
 }

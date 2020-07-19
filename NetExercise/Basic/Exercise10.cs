@@ -4,34 +4,20 @@ namespace NetExercise.Basic
 {
     public class Exercise10
     {
-        public static float diff(float x, float n)
-        {
-            return x * x * x - n;
-        }
-
-        public static float CubeRoot(float n)
+        public static double CubeRoot(double n)
         {
             if (n < 0)
             {
                 return -CubeRoot(-n);
             }
-            else if (n == 0)
-            {
-                return 0;
-            }
-            else if (n == 1)
-            {
-                return 1;
-            }
-
-            float xl = 0;
-            float xr = n < 1 ? 1 : n;
+            var xl = 0.0;
+            var xr = n;
             
             while (xr - xl > 0.00001)
             {
-                float xm = (xl + xr) / 2;
+                var xm = (xl + xr) / 2;
                 
-                if (diff(xm, n) < 0)
+                if ((xm * xm * xm - n) < 0)
                 {
                     xl = xm;
                 }
@@ -41,7 +27,7 @@ namespace NetExercise.Basic
                 }
             }
 
-            return (float)Math.Round((xr + xl) / 2, 4);
+            return xr;
         }
     }
 }
