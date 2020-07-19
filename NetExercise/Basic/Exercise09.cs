@@ -4,30 +4,23 @@ namespace NetExercise.Basic
 {
     public class Exercise09
     {
-        public static float SquareRoot(float a)
+        public static double SquareRoot(double a)
         {
-            var result = 1.0f;
+            var result = 1.0;
             
             while (Absolute(result*result - a) / a >= 0.0001)
             {
-                result = (a / result - result) / 2 + result;
+                result = (double)(a / result - result) / 2 + result;
             }
 
-            return (float)Math.Round(result,4);
+            return (double)result;
         }
 
-        public static float Absolute(float x)
+        public static double Absolute(double x)
         {
-            
-            if (x < 0)
-            {
-                return x * (-1);
-            }
-            else
-            {
-                return x;
-            }
-            
+
+            return x > 0 ? x : -x;
+
         }
     }
 }

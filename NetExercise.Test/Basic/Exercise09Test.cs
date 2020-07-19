@@ -7,9 +7,9 @@ namespace NetExercise.Test.Basic
     {
         [TestCase(4, 2)]
         [TestCase(16, 4)]
-        public void Test_SquareRoot_Ok(float a, float result)
+        public void Test_SquareRoot_Ok(double a, double result)
         {
-            Assert.AreEqual(Exercise09.SquareRoot(a), result);
+            Assert.AreEqual(Exercise09.SquareRoot(a), result,0.0001);
         }
     }
 }
