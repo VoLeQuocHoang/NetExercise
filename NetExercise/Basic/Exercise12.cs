@@ -13,15 +13,8 @@ namespace NetExercise.Basic
                 temp /= 10;
             }
 
-            if (a == n)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-            
+            return a == n;
+
         }
     }
 }
