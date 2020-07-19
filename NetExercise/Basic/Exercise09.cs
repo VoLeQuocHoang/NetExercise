@@ -13,7 +13,7 @@ namespace NetExercise.Basic
                 result = (double)(a / result - result) / 2 + result;
             }
 
-            return (double)result;
+            return result;
         }
 
         public static double Absolute(double x)
