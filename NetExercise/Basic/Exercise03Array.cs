@@ -6,8 +6,6 @@ namespace NetExercise.Basic
     {
         public static int DifferenceArray(int[] n)
         {
-            var even = new List<int>();
-            var odd = new List<int>();
             var sumEven = 0;
             var sumOdd = 0;
             
@@ -16,22 +14,12 @@ namespace NetExercise.Basic
                 
                 if (n[i] % 2 == 0)
                 {
-                    even.Add(n[i]);
+                    sumEven += n[i];
                 }
                 else
                 {
-                    odd.Add(n[i]);
+                    sumOdd += n[i];
                 }
-            }
-
-            foreach (var a in even)
-            {
-                sumEven += a;
-            }
-
-            foreach (var a in odd)
-            {
-                sumOdd += a;
             }
 
             return sumEven - sumOdd;
