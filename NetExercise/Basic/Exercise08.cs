@@ -6,8 +6,10 @@ namespace NetExercise.Basic
     {
         public static float Pi()
         {
-            float Pi = 4, t = 1;
-            int i = 1, s = -1;
+            var Pi = 4f;
+            var t = 1f;
+            var i = 1;
+            var s = -1;
             t = (float)4 / (2 * i + 1);
             
             while (t > 0.0001)
