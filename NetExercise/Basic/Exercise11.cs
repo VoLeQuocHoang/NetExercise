@@ -9,10 +9,7 @@ namespace NetExercise.Basic
             while (n > 0)
             {
                 revs <<= 1;
-
-                if ((int) (n & 1) == 1)
-                    revs ^= 1;
-
+                revs ^= (n & 1);
                 n >>= 1;
             }
 
