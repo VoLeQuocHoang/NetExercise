@@ -7,9 +7,9 @@ namespace NetExercise.Test.Basic
     {
         [TestCase(new int[] {1, 2, 3, 6, 5, 9, 3, 4, 6, 5, 5, 2, 7, 7, 5, 7}, 22)]
 
-        public void Test_SumArray_Ok(int[] n, int result)
+        public void Test_SumArray_Ok(int[] arr, int result)
         {
-            Assert.AreEqual(Exercise02Array.SumArray(n), result);
+            Assert.AreEqual(Exercise02Array.SumArray(arr), result);
         }
     }
 }

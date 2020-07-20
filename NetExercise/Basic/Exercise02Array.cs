@@ -4,44 +4,41 @@ namespace NetExercise.Basic
 {
     public class Exercise02Array
     {
-        public static int SumArray(int[] n)
+        public static int SumArray(int[] arr)
         {
-            
-            //Array.Sort(n);
-            BubbleSort(n);
-            var sum = n[n.Length - 1];
-            var quitLoop = false;
+            BubbleSort(arr);
+            var sum = arr[arr.Length - 1];
             var i = 2;
             var count = 0;
-           while (!quitLoop)
+           while (count < 2)
            {
-               if (n[n.Length - i] != n[n.Length - i + 1])
+               if (arr[arr.Length - i] != arr[arr.Length - i + 1])
                {
-                   sum += n[n.Length - i];
+                   sum += arr[arr.Length - i];
                    count++;
                }
 
                i++;
-               quitLoop = (count == 2);
            }
             return sum;
         }
 
-        private static int[] BubbleSort(int[] n)
+        private static int[] BubbleSort(int[] arr)
         {
-            for (int i = 0; i < n.Length; i++)
-                for (int j = n.Length - 1; j > i ; j--)
+            for (int i = 0; i < arr.Length; i++)
+            {
+                for (int j = arr.Length - 1; j > i; j--)
                 {
-                    if (n[j] < n[i])
+                    if (arr[j] < arr[i])
                     {
-                        var temp = 0;
-                        temp = n[i];
-                        n[i] = n[j];
-                        n[j] = temp;
+                        var temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
                     }
                 }
+            }
 
-            return n;
+            return arr;
         }
     }
 }
