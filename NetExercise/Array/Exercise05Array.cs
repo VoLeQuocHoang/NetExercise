@@ -8,18 +8,18 @@ namespace NetExercise.Array
     {
         public static string SequenceNumbers(int[] arr)
         {
-            System.Array.Sort(arr);
             var temp = new List<int>();
             var sequence = new List<int>();
             sequence.Add(arr[0]);
             
             for (int i = 1; i < arr.Length; i++)
             {
-                if (arr[i] == arr[i-1] + 1)
+                if (arr[i] > arr[i-1])
                 {
                     sequence.Add(arr[i]);
                 }
-                else
+                
+                if((arr[i] <= arr[i-1])||(i == arr.Length -1))
                 {
                     if (temp.Count < sequence.Count)
                     {
