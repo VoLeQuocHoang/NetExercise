@@ -5,17 +5,17 @@ namespace NetExercise.Test.Basic
 {
     public class Exercise16Test
     {
-        [TestCase(4, true)]
-        [TestCase(25, true)]
+        [TestCase(0, false)]
+        [TestCase(25, false)]
         [TestCase(120, true)]
-        [TestCase(40, true)]
+        [TestCase(40, false)]
         [TestCase(30, true)]
         [TestCase(210, false)]
-        [TestCase(440, false)]
+        [TestCase(420, false)]
 
-        public void Test_Check_Ok(int n, bool result)
+        public void Test_CheckNumber_Ok(int n, bool result)
         {
-            Assert.AreEqual(Exercise16.Check(n), result);
+            Assert.AreEqual(Exercise16.CheckNumber(n), result);
         }
     }
 }
