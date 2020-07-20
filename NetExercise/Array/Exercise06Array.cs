@@ -4,27 +4,29 @@ namespace NetExercise.Array
     {
         public static int BinarySearch(int[] arr,int a)
         {
-            var l = 0;
-            var r = arr.Length - 1;
+            var l = -1;
+            var r = arr.Length;
+            var middle = (l + r) >> 1;
             
             while (l < r)
             {
-                if (arr[(l + r) / 2] == a)
+                if (arr[middle] == a)
                 {
-                    return (l + r) / 2 ;
+                    return middle ;
                 }
 
-                if (arr[(l + r) / 2] > a)
+                if (arr[middle] > a)
                 {
-                    r = (l + r) / 2;
+                    r = middle;
                 }
                 else
                 {
-                    l = (l + r) / 2;
+                    l = middle;
                 }
+                middle = (l + r) >> 1;
             }
 
-            return arr[l] == a ? l : -1;
+            return arr[middle] == a ? middle : -1;
         }
     }
 }
