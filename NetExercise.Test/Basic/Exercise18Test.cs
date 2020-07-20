@@ -19,6 +19,10 @@ namespace NetExercise.Test.Basic
         public void Test_HappyNumber_Ok(int n, bool result)
         {
             Assert.AreEqual(Exercise18.HappyNumber(n), result);
+            
+            Assert.AreEqual(Exercise18.HappyNumberSolution2(n), result);
+            
+            Assert.AreEqual(Exercise18.HappyNumberSolution3(n), result);
         }
     }
 }
