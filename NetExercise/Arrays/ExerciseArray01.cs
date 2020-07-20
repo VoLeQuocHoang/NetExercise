@@ -9,7 +9,7 @@ namespace NetExercise.Arrays
         public static string CountNumberShow(int[] a)
         {
             var listCount = new List<int>();
-            var dem = 1;
+            var count = 1;
             Array.Sort(a);
 
             for (int i = 1; i < a.Length; i++)
@@ -17,12 +17,13 @@ namespace NetExercise.Arrays
                 
                 if (a[i] == a[i - 1])
                 {
-                    dem++;
+                    count++;
                 }
-                else
+                
+                if((a[i] != a[i - 1])||(i == a.Length - 1))
                 {
-                    if(dem >= 2) listCount.Add(a[i-1]);
-                    dem = 1;
+                    if(count >= 2) listCount.Add(a[i-1]);
+                    count = 1;
                 }
             }
 
