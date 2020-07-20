@@ -18,23 +18,12 @@ namespace NetExercise.Basic
             
             while (n > 0)
             {
-                temp += Power(n % 10, 2);
+                temp += (n % 10 )* (n % 10);
                 n /= 10;
             }
 
             return temp;
         }
         
-        private static int Power(int a, int n)
-        {
-            var exp = 1;
-
-            for (var i = 1; i <= n; i++)
-            {
-                exp *= a;
-            }
-
-            return exp;
-        }
     }
 }
