@@ -6,10 +6,12 @@ namespace NetExercise.Array
         {
             var l = -1;
             var r = arr.Length;
-            var middle = (l + r) >> 1;
+            var middle = 0;
             
             while (l < r)
             {
+                middle = (l + r) >> 1;
+                
                 if (arr[middle] == a)
                 {
                     return middle ;
@@ -23,7 +25,6 @@ namespace NetExercise.Array
                 {
                     l = middle;
                 }
-                middle = (l + r) >> 1;
             }
 
             return arr[middle] == a ? middle : -1;
