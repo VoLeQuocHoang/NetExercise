@@ -21,27 +21,8 @@ namespace NetExercise.Array
         
         public static bool CheckSquareNumber(int n)
         {
-            var number = Convert.ToInt32(SquareRoot(Convert.ToDouble(n)));
-            return (number * number == n) ? true : false;
-        }
-        
-        public static double SquareRoot(double a)
-        {
-            var result = 1.0;
-            
-            while (Absolute(result*result - a) / a >= 0.0001)
-            {
-                result = (double)(a / result - result) / 2 + result;
-            }
-
-            return result;
-        }
-
-        public static double Absolute(double x)
-        {
-
-            return x > 0 ? x : -x;
-
+            var number =(int) Math.Sqrt(n);
+            return (number * number == n);
         }
     }
 }
