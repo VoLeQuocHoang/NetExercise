@@ -7,7 +7,7 @@ namespace NetExercise.Test.Basic
     {
         [TestCase(12, 28, 4)]
         [TestCase(42, 28, 14)]
-        [TestCase(10, 1, 1)]
+        [TestCase(10, 1, 4)]
         public void Test_Ucln_Ok(int a, int b, int result)
         {
             Assert.AreEqual(Exercise01.Ucln(a, b),result);
