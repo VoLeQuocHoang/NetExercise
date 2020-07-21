@@ -7,6 +7,8 @@ namespace NetExercise.Test.Array
     {
         [TestCase(new int[] {1, 2, 5, 7, 10, 12}, 7, 3)]
         [TestCase(new int[] {1, 2, 5, 7, 10, 12}, 2, 1)]
+        [TestCase(new int[] {1, 2, 5, 7, 10, 12}, 1, 0)]
+        [TestCase(new int[] {1, 2, 5, 7, 10, 12}, 12, 5)]
 
         public void Test_BinarySearch_Ok(int[] arr, int number, int result)
         {
