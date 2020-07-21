@@ -19,7 +19,7 @@ namespace NetExercise.Basic
                 n = Convert(n);
             }
 
-            return n == 1;
+            return true;
         }
 
         private static int Convert(int n)
