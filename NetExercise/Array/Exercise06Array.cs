@@ -27,7 +27,7 @@ namespace NetExercise.Array
                 }
             }
 
-            return arr[middle] == a ? middle : -1;
+            return -1;
         }
     }
 }
