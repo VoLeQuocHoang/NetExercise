@@ -8,12 +8,7 @@ namespace NetExercise.Array
             var r = arr.Length;
             var middle = 0;
             
-            if ((arr[0] > a) || (arr[r - 1] < a))
-            {
-                return -1;
-            }
-            
-            while (l < r)
+            while (l < r - 1)
             {
                 middle = (l + r) >> 1;
                 
