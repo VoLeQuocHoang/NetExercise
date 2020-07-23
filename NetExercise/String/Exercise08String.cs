@@ -6,7 +6,7 @@ namespace NetExercise.String
     {
         public static string ConvertString(string s)
         {
-           var sb = new StringBuilder(100); 
+           var sb = new StringBuilder(); 
 
             for (int i = 0; i < s.Length; i++)
             {
