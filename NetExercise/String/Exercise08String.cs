@@ -1,27 +1,29 @@
+using System.Text;
+
 namespace NetExercise.String
 {
     public class Exercise08String
     {
         public static string ConvertString(string s)
         {
-            string c = "";
-            
+           StringBuilder sb = new StringBuilder(100); 
+
             for (int i = 0; i < s.Length; i++)
             {
                 if (i == 0)
                 {
-                    c += s[i];
+                    sb.Append(s[i]);
                 }
                 else
                 {
                     if (!s[i].Equals(s[i - 1]))
                     {
-                        c += s[i];
+                        sb.Append(s[i]);
                     }
                 }
             }
 
-            return c;
+            return sb.ToString();
         }
     }
 }
