@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace NetExercise.String
 {
     public class Exercise06String
@@ -5,14 +7,14 @@ namespace NetExercise.String
         public static string CountCharacter(string s)
         {
             var count = 1;
-            string c = "";
+            var c = new StringBuilder();
             
             for (int i = 0; i < s.Length; i++)
             {
                 
                 if (i == 0)
                 {
-                    c += s[i];
+                    c.Append(s[i]);
                 }
                 else
                 {
@@ -22,7 +24,7 @@ namespace NetExercise.String
                         count++;
                         if (i == s.Length - 1)
                         {
-                            c += count;
+                            c.Append(count);
                         }
                     }
                     else
@@ -30,16 +32,16 @@ namespace NetExercise.String
                         
                         if (count > 1)
                         {
-                            c += count;
+                            c.Append(count);
                         }
 
                         count = 1;
-                        c += s[i];
+                        c.Append(s[i]);
                     }
                 }
             }
 
-            return c;
+            return c.ToString();
         }
     }
 }
