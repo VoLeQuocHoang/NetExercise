@@ -7,20 +7,7 @@ namespace NetExercise.Basic
         public static int SumArray(int[] arr)
         {
             BubbleSort(arr);
-            var sum = arr[arr.Length - 1];
-            var i = 2;
-            var count = 0;
-           while (count < 2)
-           {
-               if (arr[arr.Length - i] != arr[arr.Length - i + 1])
-               {
-                   sum += arr[arr.Length - i];
-                   count++;
-               }
-
-               i++;
-           }
-            return sum;
+            return arr[0] + arr[1] + arr[2];
         }
 
         private static int[] BubbleSort(int[] arr)
@@ -29,7 +16,7 @@ namespace NetExercise.Basic
             {
                 for (int j = arr.Length - 1; j > i; j--)
                 {
-                    if (arr[j] < arr[i])
+                    if (arr[j] > arr[i])
                     {
                         var temp = arr[i];
                         arr[i] = arr[j];
