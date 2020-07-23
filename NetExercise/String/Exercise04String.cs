@@ -1,3 +1,5 @@
+using System;
+
 namespace NetExercise.String
 {
     public class Exercise04String
@@ -10,12 +12,13 @@ namespace NetExercise.String
             for (int i = 0; i < s.Length; i++)
             {
                 
-                if (s[i] >= '0' && s[i] <= '9')
+                var isDigit = Char.IsDigit(s[i]);
+                if (isDigit)
                 {
                     digit = digit * 10 + (s[i] - '0');
                 }
 
-                if (!(s[i] >= '0' && s[i] <= '9')||(i == s.Length -1))
+                if (!isDigit||(i == s.Length -1))
                 {
                     sum += digit;
                     digit = 0;
