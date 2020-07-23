@@ -8,7 +8,7 @@ namespace NetExercise.Test.Basic
         [TestCase(3.1415f)]
         public void Test_Pi_Ok(float result)
         {
-            Assert.AreEqual(Exercise08.Pi(), result);
+            Assert.AreEqual(Exercise08.Pi(), result,0.0001);
         }
     }
 }
