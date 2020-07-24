@@ -10,7 +10,7 @@ namespace NetExercise.Arrays
         {
             var listCount = new List<int>();
             var count = 1;
-            Array.Sort(a);
+            System.Array.Sort(a);
 
             for (int i = 1; i < a.Length; i++)
             {
