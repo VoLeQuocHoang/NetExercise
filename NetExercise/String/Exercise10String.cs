@@ -10,18 +10,11 @@ namespace NetExercise.String
             var fistname = new StringBuilder();
             var lastname = new StringBuilder();
             var lastspace = s.LastIndexOf(" ");
-            for (int i = 0; i < s.Length; i++)
-            {
-                if (i < lastspace)
-                {
-                    lastname.Append(s[i]);
-                }
-                else if (i > lastspace)
-                {
-                    fistname.Append(s[i]);
-                }
-            }
+            var leng = s.Length - 1;
             
+            lastname.Append(s.Substring(0, lastspace));
+            fistname.Append(s.Substring(lastspace + 1, leng - lastspace));
+
             return Tuple.Create(lastname.ToString(),fistname.ToString());
         }
     }
