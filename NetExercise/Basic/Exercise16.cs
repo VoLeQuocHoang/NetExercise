@@ -1,42 +1,27 @@
+using System.Collections.Generic;
+using System.Text;
+
 namespace NetExercise.Basic
 {
     public class Exercise16
     {
         public static bool CheckNumber(int n)
         {
-            if (n < 3)
+            for (int i = 2; i <= n; i++)
             {
-                return false;
-            }
-            
-            if (n % 30 == 0)
-            {
-                for (int i = 2; i <= n/2; i++)
+                while (n % i == 0)
                 {
-                    if (n % i == 0)
+                    if (i > 5)
                     {
-                        if ((Prime(i) && (i != 2) && (i != 3) && (i != 5))||(Prime(n / i) && (n / i != 2) && (n / i != 3) && (n / i != 5)))
-                        {
-                            return false;
-                        }
+                        return false;
                     }
+                    
+                    n /= i;
                 }
-
-                return true;
             }
 
-            return false;
+            return (n==1||n==0);
         }
-        public static bool Prime(int n)
-        {
-            if (n < 2) return false;
-            
-            for (int i = 2; i * i <= n; i++)
-            {
-                if (n % i == 0) return false;
-            }
-
-            return true;
-        }
+        
     }
 }

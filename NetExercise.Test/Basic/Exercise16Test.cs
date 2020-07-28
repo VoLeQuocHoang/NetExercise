@@ -5,7 +5,7 @@ namespace NetExercise.Test.Basic
 {
     public class Exercise16Test
     {
-        [TestCase(0, false)]
+        [TestCase(0, true)]
         [TestCase(25, true)]
         [TestCase(120, true)]
         [TestCase(40, true)]
@@ -16,7 +16,7 @@ namespace NetExercise.Test.Basic
         [TestCase(2, true)]
         [TestCase(6, true)]
         [TestCase(20, true)]
-        [TestCase(22, true)]
+        [TestCase(22, false)]
         [TestCase(35, false)]
         [TestCase(30, true)]
         [TestCase(210, false)]
