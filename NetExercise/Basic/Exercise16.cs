@@ -7,20 +7,15 @@ namespace NetExercise.Basic
     {
         public static bool CheckNumber(int n)
         {
-            for (int i = 2; i <= n; i++)
+            for (int i = 2; i <= 5; i++)
             {
                 while (n % i == 0)
                 {
-                    if (i > 5)
-                    {
-                        return false;
-                    }
-                    
                     n /= i;
                 }
             }
 
-            return (n==1||n==0);
+            return (n < 2);
         }
         
     }
