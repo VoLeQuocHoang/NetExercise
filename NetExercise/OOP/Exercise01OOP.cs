@@ -43,7 +43,7 @@ namespace NetExercise.OOP
         
         public override string ToString()
         {
-            return a.ToString()+"/"+b.ToString();
+            return String.Format("{0}/{1}",a,b);
         }
 
         private int a;
