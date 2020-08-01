@@ -35,7 +35,7 @@ namespace NetExercise.Array
                 
             }
 
-            return String.Join(" ",temp);
+            return System.String.Join( " ",temp);
         }
     }
 }
