@@ -1,8 +1,9 @@
+using System;
+
 namespace NetExercise.OOP
 {
     public class Fraction
     {
-        private int i;
 
         public Fraction(int numerator , int denominator)
         {
@@ -12,35 +13,27 @@ namespace NetExercise.OOP
 
         public override int GetHashCode()
         {
-            return i;
+            var result = 1;
+            result = 17 + a;
+            result = result * 19 + b;
+            return result;
         }
         
 
         public override bool Equals(object? obj)
         {
             
-            if (obj == null || !(obj is Fraction))
-            {
+                if (obj is Fraction fraction)
+                {
+                    return ((GetHashCode() == fraction.GetHashCode() && (a == fraction.a) && (b == fraction.b)));
+                }
+
                 return false;
-            }
-            else
-            {
-                return ((i == ((Fraction) obj).i)&&(a == ((Fraction) obj).a)&&(b == ((Fraction) obj).b));
-            }
-            
         }
 
         public static bool operator==(Fraction n, Fraction m)
         {
-            
-            if (n.a == m.a || n.b == m.b)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return (n.a / m.a == n.b / m.b);
         }
 
         public static bool operator !=(Fraction n, Fraction m)
@@ -52,21 +45,17 @@ namespace NetExercise.OOP
         {
             return a.ToString()+"/"+b.ToString();
         }
-        
-        
-        private double a;
-        public double A
-        {
-            get => a;
-             private set => a = value;
+
+        private int a;
+        public int A {
+            get { return a; }
+            private set { a = value; }
         }
 
-        private double b;
-
-        public double B
-        {
-            get => b;
-            private set => b = value;
+        private int b;
+        public int B { 
+            get { return b; }
+            private set { b = value; }
         }
     }
 }
