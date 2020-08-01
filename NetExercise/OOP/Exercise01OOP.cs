@@ -1,5 +1,6 @@
 using System;
-
+using System.Text;
+using Microsoft.VisualBasic;
 namespace NetExercise.OOP
 {
     public class Fraction
