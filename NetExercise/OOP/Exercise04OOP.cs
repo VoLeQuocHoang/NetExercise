@@ -11,7 +11,7 @@ namespace NetExercise.OOP
         public Fraction(int a , int b)
         {
             this.a = a;
-            this.b = b;
+            this.b = ;
             id = GetHashCode();
         }
 
@@ -49,7 +49,7 @@ namespace NetExercise.OOP
     
         public override string ToString()
         {
-            return System.String.Format( "{0}/{1}",a,b);
+            return $"{a}/{b}";
         }
 
         public static Fraction operator+(Fraction n, Fraction m)
