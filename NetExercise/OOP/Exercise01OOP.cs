@@ -6,10 +6,10 @@ namespace NetExercise.OOP
     public class Fraction
     {
 
-        public Fraction(int numerator , int denominator)
+        public Fraction(int a , int b)
         {
-            this.a = numerator;
-            this.b = denominator;
+            this.a = a;
+            this.b = b;
         }
 
         public override int GetHashCode()
@@ -26,7 +26,7 @@ namespace NetExercise.OOP
             
                 if (obj is Fraction fraction)
                 {
-                    return ((GetHashCode() == fraction.GetHashCode() && (a == fraction.a) && (b == fraction.b)));
+                    return ((this == fraction) && (GetHashCode() == fraction.GetHashCode()));
                 }
 
                 return false;
@@ -34,7 +34,7 @@ namespace NetExercise.OOP
 
         public static bool operator==(Fraction n, Fraction m)
         {
-            return (n.a / m.a == n.b / m.b);
+            return (n.a * m.b == n.b * m.a);
         }
 
         public static bool operator !=(Fraction n, Fraction m)
@@ -44,19 +44,13 @@ namespace NetExercise.OOP
         
         public override string ToString()
         {
-            return String.Format("{0}/{1}",a,b);
+            return $"{a}/{b}";
         }
 
         private int a;
-        public int A {
-            get { return a; }
-            private set { a = value; }
-        }
+        public int A { get; private set; }
 
         private int b;
-        public int B { 
-            get { return b; }
-            private set { b = value; }
-        }
+        public int B { get; private set; }
     }
 }
