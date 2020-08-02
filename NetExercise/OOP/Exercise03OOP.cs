@@ -5,30 +5,26 @@ namespace NetExercise.OOP
 { 
     public class Fraction
     {
-        public int id;
-
         public Fraction(int a , int b)
         {
-            this.a = a;
-            this.b = b;
-            id = GetHashCode();
+            A = a;
+            B = b;
         }
 
         public override int GetHashCode()
         {
             var result = 1;
-            result = 17 + a;
-            result = result * 19 + b;
+            result = 17 + A;
+            result = result * 19 + B;
             return result;
         }
     
 
         public override bool Equals(object? obj)
         {
-        
             if (obj is Fraction fraction)
             {
-                return ((id == fraction.id) && (this == fraction));
+                return this == fraction;
             }
 
             return false;
@@ -38,7 +34,7 @@ namespace NetExercise.OOP
         {
             n.Minimal();
             m.Minimal();
-            return ((n.a == m.a)&&(n.b == m.b));
+            return ((n.A == m.A)&&(n.B == m.B));
         }
 
         public static bool operator !=(Fraction n, Fraction m)
@@ -48,14 +44,14 @@ namespace NetExercise.OOP
     
         public override string ToString()
         {
-             return $"{a}/{b}";
+             return $"{A}/{B}";
         }
 
         public void Minimal()
         {
-            var temp = Minimal(a, b);
-            a = temp.Item1;
-            b = temp.Item2;
+            var temp = Minimal(A, B);
+            A = temp.Item1;
+            B = temp.Item2;
         }
         
         public static Tuple<int, int> Minimal(int a, int b)
