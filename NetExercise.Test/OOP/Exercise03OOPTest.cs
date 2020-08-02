@@ -6,6 +6,7 @@ namespace NetExercise.Test.OOP
     public class Exercise03OOPTest
     {
         [TestCase(8, 9, 16, 18)]
+        [TestCase(11, 13, 11, 13)]
         
         public void Test_Fraction_Ok(int a, int b, int c, int d)
         {
