@@ -11,7 +11,7 @@ namespace NetExercise.OOP
         public Fraction(int a , int b)
         {
             this.a = a;
-            this.b = ;
+            this.b = b;
             id = GetHashCode();
         }
 
