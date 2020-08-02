@@ -55,18 +55,23 @@ namespace NetExercise.OOP
         }
         
         public static Tuple<int, int> Minimal(int a, int b)
-        {
-            var temp = 1;
-        
-            for (int j = 2; j <= a; j++)
+        { 
+            var i = 2;
+		
+            while(a >= i && b >= i)
             {
-                if ((a % j == 0) && (b % j == 0))
+                if(a % i == 0 && b % i ==0)
                 {
-                    temp = j;
+                    a /=i;
+                    b /=i;
+                }
+                else
+                {
+                    i++;
                 }
             }
             
-           return Tuple.Create(a / temp, b / temp);
+            return Tuple.Create(a , b);
         }
     
         private int a;
