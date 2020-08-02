@@ -29,7 +29,7 @@ namespace NetExercise.OOP
         
             if (obj is Fraction fraction)
             {
-               return ((id == fraction.id && (a == fraction.a) && (b == fraction.b)));
+               return ((id == fraction.id) && (this == fraction));
             }
 
             return false;
