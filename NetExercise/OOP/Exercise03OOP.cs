@@ -7,10 +7,10 @@ namespace NetExercise.OOP
     {
         public int id;
 
-        public Fraction(int numerator , int denominator)
+        public Fraction(int a , int b)
         {
-            this.a = numerator;
-            this.b = denominator;
+            this.a = a;
+            this.b = b;
             id = GetHashCode();
         }
 
@@ -28,7 +28,7 @@ namespace NetExercise.OOP
         
             if (obj is Fraction fraction)
             {
-                return ((id == fraction.id && (a == fraction.a) && (b == fraction.b)));
+                return ((id == fraction.id) && (this == fraction));
             }
 
             return false;
@@ -48,10 +48,17 @@ namespace NetExercise.OOP
     
         public override string ToString()
         {
-            return String.Format("{0}/{1}",a,b);
+             return $"{a}/{b}";
         }
 
         public void Minimal()
+        {
+            var temp = Minimal(a, b);
+            a = temp.Item1;
+            b = temp.Item2;
+        }
+        
+        public static Tuple<int, int> Minimal(int a, int b)
         {
             var temp = 1;
         
@@ -62,21 +69,14 @@ namespace NetExercise.OOP
                     temp = j;
                 }
             }
-
-            a = a / temp;
-            b = b / temp;
+            
+           return Tuple.Create(a / temp, b / temp);
         }
     
         private int a;
-        public int A {
-            get { return a; }
-            private set { a = value; }
-        }
+        public int A { get; private set; }
 
         private int b;
-        public int B { 
-            get { return b; }
-            private set { b = value; }
-        }
+        public int B { get; private set; }
     }
 }
