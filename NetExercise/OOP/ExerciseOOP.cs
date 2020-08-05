@@ -1,4 +1,6 @@
 using System;
+using System.Resources;
+
 namespace NetExercise.OOP
 {
     public class Fraction
@@ -9,11 +11,18 @@ namespace NetExercise.OOP
             B = b;
         }
 
+        public Fraction(int a)
+        {
+            A = a;
+            B = 1;
+        }
+        
         public override int GetHashCode()
         {
             var result = 1;
             result = 17 + A;
             result = result * 19 + B;
+            
             return result;
         }
     
@@ -32,6 +41,7 @@ namespace NetExercise.OOP
         {
             n.Minimal();
             m.Minimal();
+            
             return (n.A == m.A)&&(n.B == m.B);
         }
 
@@ -49,32 +59,32 @@ namespace NetExercise.OOP
         {
             var a = (n.A * m.B) + (n.B * m.A);
             var b = n.B * m.B;
-            var temp = Minimal(a, b);
-            return new Fraction(temp.Item1, temp.Item2);
+            
+            return Minimal(a, b);
         }
-        
+
         public static Fraction operator-(Fraction n, Fraction m)
         {
             var a = (n.A * m.B) - (n.B * m.A);
             var b = n.B * m.B;
-            var temp = Minimal(a, b);
-            return new Fraction(temp.Item1, temp.Item2);
+            
+            return Minimal(a, b);
         }
 
         public static Fraction operator*(Fraction n, Fraction m)
         {
             var a = n.A * m.A;
             var b = n.B * m.B;
-            var temp = Minimal(a, b);
-            return new Fraction(temp.Item1, temp.Item2);
+            
+            return Minimal(a, b);
         }
 
         public static Fraction operator/(Fraction n, Fraction m)
         {
             var a = n.A * m.B;
             var b = n.B * m.A;
-            var temp = Minimal(a, b);
-            return new Fraction(temp.Item1, temp.Item2);
+            
+            return Minimal(a, b);
         }
 
         public static bool operator>=(Fraction n, Fraction m)
@@ -102,37 +112,40 @@ namespace NetExercise.OOP
             return new Fraction(n.B,n.A);
         }
         
+        public static explicit operator double(Fraction n)
+        {
+            return (double) n.A / n.B;
+        }
+
+        public static implicit operator Fraction(int n)
+        {
+            return new Fraction(n);
+        }
+
         public void Minimal()
         {
             var temp = Minimal(A, B);
-            A = temp.Item1;
-            B = temp.Item2;
+            A = temp.A;
+            B = temp.B;
         }
         
-        public static Tuple<int, int> Minimal(int a, int b)
-        { 
-            var i = 2;
-		
-            while(a >= i && b >= i)
-            {
-                if(a % i == 0 && b % i ==0)
-                {
-                    a /=i;
-                    b /=i;
-                }
-                else
-                {
-                    i++;
-                }
-            }
-            
-            return Tuple.Create(a , b);
-        }
-    
-        private int a;
-        public int A { get; private set; }
+        public static Fraction Minimal(int a, int b)
+        {
+            var t = Gcd(a, b);
 
-        private int b;
+            return new Fraction(a / t, b / t);
+        }
+
+        private static int Gcd(int a, int b) //Greatest Common Divisor
+        {
+            if (b == 0)
+            {
+                return a;
+            }
+
+            return Gcd(b, a % b);
+        }
+        public int A { get; private set; }
         public int B { get; private set; }
     }
 }
