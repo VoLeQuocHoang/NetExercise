@@ -216,19 +216,8 @@ namespace NetExercise.FractionLinq
         }
         
         public static List<Fraction> CheckDuplicateValue(List<Fraction> lst)
-        {
-            var ls = new List<Fraction>();
-            var duplicates = lst.GroupBy(s => (double) s).Where(gr => gr.Count()>1);
-                
-            foreach(var n in duplicates)
-            {
-                foreach(var a in n)
-                {
-                    ls.Add(a);
-                }
-            }
-
-            return ls;
+        {       
+            return lst.GroupBy(s => (double) s).Where(gr => gr.Count()>1).SelectMany(x => x).ToList();
         }
 
         public static List<Fraction> CheckEqualsNumerator(List<Fraction> lst, int x)
