@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using NetExercise.OOP;
+using NetExercise.FractionLinq;
 
 namespace NetExercise.Test.FractionLinq
 {
