@@ -27,7 +27,7 @@ namespace NetExercise.FractionLinq
                 lstClone.Add(new Fraction(a.A, a.B));
             }
             
-            return lstClone.ToList();
+            return lstClone;
         }
 
         public override int GetHashCode()
