@@ -9,7 +9,6 @@ namespace NetExercise.FractionLinq
 {
     public class ExerciseLinq
     {
-        //Linq
         //Tìm giá trị Fraction lớn nhất
         public Fraction Biggest(List<Fraction> lst)
         {
@@ -82,8 +81,5 @@ namespace NetExercise.FractionLinq
         {
             return lst.Distinct().ToList();
         }
-        //Linq
-        public int A { get; private set; }
-        public int B { get; private set; }
     }
 }
