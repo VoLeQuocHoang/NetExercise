@@ -121,6 +121,23 @@ namespace NetExercise.Test.Linq
         }
         
         [TestCase]
+        public void Test_Fraction_CheckDuplicate_Should_Not_Also_Return_Duplication()
+        {
+            var input = new List<Fraction>() 
+            {
+                new Fraction(10,3),
+                new Fraction(10,3),
+                new Fraction(10,3),
+                new Fraction(10,3),
+            };
+            var lst = new List<Fraction>() 
+            {
+                new Fraction(10,3),
+            };
+            Assert.AreEqual(new ExerciseLinq().CheckDuplicate(input),lst);
+        }
+        
+        [TestCase]
         public void Test_Fraction_CheckDuplicate_Ok()
         {
             var lst = new List<Fraction>() 
