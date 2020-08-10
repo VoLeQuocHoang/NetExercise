@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using NetExercise.FractionLinq;
+using NetExercise.OOP;
 
 namespace NetExercise.Test.FractionLinq
 {
@@ -22,6 +23,7 @@ namespace NetExercise.Test.FractionLinq
             new Fraction(10, 3),
             new Fraction(10, 3),
             new Fraction(10, 7),
+            new Fraction(4, 3),
             new Fraction(10, 11),
             new Fraction(10, 33),
         };

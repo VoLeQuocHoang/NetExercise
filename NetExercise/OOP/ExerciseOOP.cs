@@ -122,11 +122,9 @@ namespace NetExercise.OOP
             return new Fraction(n);
         }
 
-        public void Minimal()
+        public Fraction Minimal()
         {
-            var temp = Minimal(A, B);
-            A = temp.A;
-            B = temp.B;
+            return Minimal(A, B);
         }
         
         public static Fraction Minimal(int a, int b)

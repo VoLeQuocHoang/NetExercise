@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using NetExercise.FractionLinq;
+using NetExercise.OOP;
 
 namespace NetExercise.FractionLinq
 {

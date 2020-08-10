@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Xml;
 using NUnit.Framework; 
 using NetExercise.FractionLinq;
+using NetExercise.OOP;
 using NetExercise.Test.FractionLinq;
 
 namespace NetExercise.Test.Linq
@@ -13,28 +15,28 @@ namespace NetExercise.Test.Linq
         public void Test_Fraction_Biggest_Ok()
         {
             var lst = new Fraction(8, 2);
-            Assert.AreEqual(Fraction.Biggest(Fraction.Clone(Fractions)), lst);
+            Assert.AreEqual(new ExerciseLinq().Biggest(Fractions), lst);
         }
         
         [TestCase]
         public void Test_Fraction_Smallest_Ok()
         {
             var lst = new Fraction(10,33);
-            Assert.AreEqual(Fraction.Smallest(Fraction.Clone(Fractions)),lst) ;
+            Assert.AreEqual(new ExerciseLinq().Smallest(Fractions),lst) ;
         }
         
         [TestCase]
         public void Test_Fraction_Sum_Ok()
         {
-            var lst = new Fraction(388567,13860);
-            Assert.AreEqual(Fraction.Sum(Fraction.Clone(Fractions)),lst);
+            var lst = new Fraction(407047,13860);
+            Assert.AreEqual(new ExerciseLinq().Sum(Fractions),lst);
         }
         
         [TestCase]
         public void Test_Fraction_Product_Ok()
         {
-           var lst = new Fraction(1097600000,21434787);
-           Assert.AreEqual(Fraction.Product(Fraction.Clone(Fractions)),lst);
+           var lst = new Fraction(95432704,64304361);
+           Assert.AreEqual(new ExerciseLinq().Product(Fractions),lst);
         }
         
         [TestCase]
@@ -50,6 +52,7 @@ namespace NetExercise.Test.Linq
                 new Fraction(7, 9),
                 new Fraction(10, 11),
                 new Fraction(4, 3),
+                new Fraction(4, 3),
                 new Fraction(10, 7),
                 new Fraction(5, 3),
                 new Fraction(7, 4),
@@ -60,7 +63,7 @@ namespace NetExercise.Test.Linq
                 new Fraction(10, 3),
                 new Fraction(8, 2),
             };
-            Assert.AreEqual(Fraction.Sort(Fraction.Clone(Fractions)),lst);
+            Assert.AreEqual(new ExerciseLinq().Sort(Fractions),lst);
         }
         
         [TestCase]
@@ -71,6 +74,7 @@ namespace NetExercise.Test.Linq
                 new Fraction(1,2),
                 new Fraction(1,3),
                 new Fraction(2,3),
+                new Fraction(4,3),
                 new Fraction(4,3),
                 new Fraction(5,3),
                 new Fraction(6,3),
@@ -86,7 +90,7 @@ namespace NetExercise.Test.Linq
                 new Fraction(10,11),
                 new Fraction(10,33),
             };
-            Assert.AreEqual(Fraction.SortByNumerator(Fraction.Clone(Fractions)),lst);
+            Assert.AreEqual(new ExerciseLinq().SortByNumerator(Fractions),lst);
         }
         
         [TestCase]
@@ -105,6 +109,7 @@ namespace NetExercise.Test.Linq
                 new Fraction(8,3),
                 new Fraction(10,3),
                 new Fraction(10,3),
+                new Fraction(4,3),
                 new Fraction(7,4),
                 new Fraction(10,7),
                 new Fraction(7,9),
@@ -112,7 +117,7 @@ namespace NetExercise.Test.Linq
                 new Fraction(10,11),
                 new Fraction(10,33),
             };
-            Assert.AreEqual(Fraction.SortByDenominator(Fraction.Clone(Fractions)),lst);
+            Assert.AreEqual(new ExerciseLinq().SortByDenominator(Fractions),lst);
         }
         
         [TestCase]
@@ -120,9 +125,10 @@ namespace NetExercise.Test.Linq
         {
             var lst = new List<Fraction>() 
             {
+                new Fraction(4, 3),
                 new Fraction(10,3),
             };
-            Assert.AreEqual(Fraction.CheckDuplicate(Fraction.Clone(Fractions)),lst);
+            Assert.AreEqual(new ExerciseLinq().CheckDuplicate(Fractions),lst);
         }
         
         [TestCase]
@@ -130,10 +136,10 @@ namespace NetExercise.Test.Linq
         {
             var lst = new List<Fraction>() 
             {
-                new Fraction(10, 3),
+                new Fraction(4, 3),
                 new Fraction(10, 3),
             };
-            Assert.AreEqual(Fraction.CheckDuplicateValue(Fraction.Clone(Fractions)),lst);
+            Assert.AreEqual(new ExerciseLinq().CheckDuplicateValue(Fractions),lst);
         }
         
         [TestCase(7)]
@@ -146,7 +152,7 @@ namespace NetExercise.Test.Linq
                 new Fraction(7, 9),
                 new Fraction(7, 10),
             };
-            Assert.AreEqual(Fraction.CheckEqualsNumerator(Fraction.Clone(Fractions), x),lst);
+            Assert.AreEqual(new ExerciseLinq().CheckEqualsNumerator(Fractions, x),lst);
         }
         
         [TestCase(4)]
@@ -159,7 +165,7 @@ namespace NetExercise.Test.Linq
                 new Fraction(10,11),
                 new Fraction(10,33),
             };
-            Assert.AreEqual(Fraction.CheckGreateThanDenominator(Fraction.Clone(Fractions), y),lst);
+            Assert.AreEqual(new ExerciseLinq().CheckGreateThanDenominator(Fractions, y),lst);
         }
         
         [TestCase]
@@ -183,7 +189,7 @@ namespace NetExercise.Test.Linq
                 new Fraction(10, 11),
                 new Fraction(10, 33),
             };
-            Assert.AreEqual(Fraction.MergeNumber(Fraction.Clone(Fractions)), lst);
+            Assert.AreEqual(new ExerciseLinq().MergeNumber(Fractions), lst);
         }
         //LinQ
     }
