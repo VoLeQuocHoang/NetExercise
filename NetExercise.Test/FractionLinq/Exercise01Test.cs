@@ -16,7 +16,7 @@ namespace NetExercise.Test.FractionLinq
                 new Fraction(10, 3),
                 new Fraction(10, 3),
             };
-            Assert.AreEqual(new Exercise01().GetMaxOf3(Fractions), expectedResult);
+           Assert.AreEqual(new Exercise01().GetMaxOf3(Fractions), expectedResult);
         }
     }
 }
