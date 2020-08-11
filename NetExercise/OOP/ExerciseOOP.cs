@@ -39,10 +39,10 @@ namespace NetExercise.OOP
 
         public static bool operator==(Fraction n, Fraction m)
         {
-            n.Minimal();
-            m.Minimal();
+            var a = n.Minimal();
+            var b = m.Minimal();
             
-            return (n.A == m.A)&&(n.B == m.B);
+            return (a.A == b.A)&&(a.B == b.B);
         }
 
         public static bool operator!=(Fraction n, Fraction m)
@@ -122,11 +122,9 @@ namespace NetExercise.OOP
             return new Fraction(n);
         }
 
-        public void Minimal()
+        public Fraction Minimal()
         {
-            var temp = Minimal(A, B);
-            A = temp.A;
-            B = temp.B;
+            return Minimal(A, B);
         }
         
         public static Fraction Minimal(int a, int b)

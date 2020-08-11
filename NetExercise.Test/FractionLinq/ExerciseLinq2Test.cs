@@ -80,6 +80,12 @@ namespace NetExercise.Test.FractionLinq
             Assert.AreEqual(ExerciseLinq2.FindSquareNumberBiggest(Lists), n);
         }
 
+        [TestCase(255)]
+        public void Test_SumOfSquareNumbers_Ok(int n)
+        {
+            Assert.AreEqual(ExerciseLinq2.SumOfSquareNumbers(Lists), n);
+        }
+        
         [TestCase(6)]
         public void Test_CountPrimeNumbers_Ok(int n)
         {

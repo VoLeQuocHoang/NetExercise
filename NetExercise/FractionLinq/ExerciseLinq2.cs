@@ -35,19 +35,19 @@ namespace NetExercise.FractionLinq
         //Tìm giá trị bị lặp nhiều lần nhất
         public static int GetNumberMostDuplicate(List<int> lst)
         {
-            return lst.GroupBy(x => x).OrderByDescending(gr => gr.Count()).Select(a => a.First()).Take(1).FirstOrDefault();
+            return lst.GroupBy(x => x).OrderByDescending(gr => gr.Count()).Select(x => x.Key).FirstOrDefault();
         }
 
         //Tìm ra danh sách các giá trị không bị lặp
         public static List<int> ListNumbersDontDuplicate(List<int> lst)
         {
-            return lst.GroupBy(x => x).Where(gr => gr.Count() == 1).SelectMany(a => a).ToList();
+            return lst.GroupBy(x => x).Where(gr => gr.Count() == 1).Select(x => x.Key).ToList();
         }
 
         //Tìm ra danh sách các giá trị bị lặp
         public static List<int> ListNumbersDuplicate(List<int> lst)
         {
-            return lst.GroupBy(x => x).Where(gr => gr.Count() > 1).Select(a => a.First()).ToList();
+            return lst.GroupBy(x => x).Where(gr => gr.Count() > 1).Select(x => x.Key).ToList();
         }
         
         //Sắp xếp theo số lượng chữ số tăng dần
@@ -59,43 +59,26 @@ namespace NetExercise.FractionLinq
         //Tính tổng của các số chẵn
         public static int SumOfEvenNumbers(List<int> lst)
         {
-            return lst.Sum(x => {
-                if(x % 2 == 0)
-                {
-                    return x;
-                } 
-                else
-                {
-                    return 0;
-                }
-            });
+            return lst.Where(x => x % 2 == 0).Sum();
         }
         
         //Tính số chính phương lớn nhất
         public static int FindSquareNumberBiggest(List<int> lst)
         {
-            return lst.Where(x => x == Math.Pow((int)Math.Sqrt(x),2)).OrderByDescending(n => n).Take(1).FirstOrDefault();
+            return (from s in lst let n = (int)Math.Sqrt(s) where s == n * n select s).Max();
         }
         
         //Tính tổng của các số chính phương
         public static int SumOfSquareNumbers(List<int> lst)
         {
-            return lst.Where(x => x == Math.Pow((int)Math.Sqrt(x),2)).Sum();
+            return (from s in lst let n = (int)Math.Sqrt(s) where s == n * n select s).Sum();
         }
         
         //Đếm số lượng số nguyên tố
         public static int CountPrimeNumbers(List<int> lst)
         {
-            return lst.Where(n => {
-                if (n < 2) return false;
-            
-                for (int i = 2; i * i <= n; i++)
-                {
-                    if (n % i == 0) return false;
-                }
-
-                return true;
-            }).Distinct().Count();
+            return lst.Where(n => n >= 2 && Enumerable.Range(2, (int) Math.Sqrt(n) - 1).All(x => n % x > 0)).Distinct()
+                .Count();
         }
     }
 }
